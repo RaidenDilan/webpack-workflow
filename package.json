@@ -1,0 +1,23 @@
+{
+  "name": "webpack-workflow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaidenDilan/webpack-workflow.git"
+  },
+  "author": "Raiden Dilan <raiden18@me.com> (https://www.raidendilan.co.uk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaidenDilan/webpack-workflow/issues"
+  },
+  "homepage": "https://github.com/RaidenDilan/webpack-workflow#readme",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-dev-server": "^3.10.3"
+  }
+}
