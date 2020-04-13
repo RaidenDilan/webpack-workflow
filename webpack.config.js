@@ -4,13 +4,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
+  devtool: 'cheap-module-eval-source-map',
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'), // location of generated output
+    path: path.resolve(__dirname, 'dist'),
+    chunkFilename: '[id].js',
     filename: 'bundle.js',
     publicPath: ''
   },
-  devtool: 'cheap-module-eval-source-map',
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     rules: [
       {
@@ -21,7 +25,6 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        // multiple loaders
         use: [
           { loader: 'style-loader' },
           {
@@ -37,7 +40,6 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               indent: 'postcss',
-              // execute plugins
               plugins: () => [autoprefixer()]
             }
           }
@@ -51,9 +53,9 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: __dirname + '/src/index.html', // base html file
-      filename: 'index.html', // generate the file
-      inject: 'body' // inject content into 'head' or 'body'
+      template: __dirname + '/src/index.html',
+      filename: 'index.html',
+      inject: 'body'
     })
   ]
 };
