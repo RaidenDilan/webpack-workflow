@@ -7,12 +7,12 @@ const asyncComponent = (importComponent) => {
     }
 
     componentDidMount () {
-      importComponent().then(cmp => this.setState({component: cmp.default}));
+      importComponent().then(cmp => this.setState({ component: cmp.default }));
     }
 
     render () {
       const C = this.state.component;
-      return C ? <C {...this.props} /> : null;
+      return C ? <C { ...this.props } /> : null;
     }
   }
 }
